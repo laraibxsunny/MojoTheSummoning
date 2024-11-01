@@ -1,16 +1,17 @@
 const { Model, DataTypes } = require("sequelize");
 const { db } = require("../db/config.js");
 
-class User extends Model {}
+class Deck extends Model {}
 
-User.init(
+Deck.init(
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    username: DataTypes.TEXT,
+    name: DataTypes.TEXT,
+    xp: DataTypes.INTEGER,
   },
   {
     sequelize: db,
@@ -18,5 +19,5 @@ User.init(
 );
 
 module.exports = {
-  User,
+  Deck,
 };
